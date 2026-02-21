@@ -160,4 +160,30 @@
   .btn-main {
     @apply inline-block font-semibold text-lg text-center text-primary-800 bg-accent-500 hover:bg-accent-600 px-4 py-3 md:px-8 md:py-6 transition-all;
   }
+
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 8px solid theme("colors.primary.900");
+    border-right-color: theme("colors.primary.200");
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme("colors.primary.200");
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
 }

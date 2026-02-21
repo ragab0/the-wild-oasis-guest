@@ -4,13 +4,13 @@ import { Button } from "./ui/button";
 
 const pages = [
   {
-    to: "cabins",
+    to: "/cabins",
   },
   {
-    to: "about",
+    to: "/about",
   },
   {
-    to: "account",
+    to: "/account",
     title: "guest area",
   },
 ];
@@ -31,7 +31,7 @@ export default function Header() {
                       i === pages.length - 1 ? "pe-0" : ""
                     }`}
                   >
-                    {title || to}
+                    {title || to.slice(1)}
                   </Link>
                 </Button>
               </li>
