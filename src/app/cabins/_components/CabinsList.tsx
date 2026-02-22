@@ -1,8 +1,8 @@
-import { getCabins } from "@/services/cabins.service";
+import { getAllCabins } from "@/services/cabins.service";
 import CabinItem from "./CabinItem";
 
 export default async function CabinsList() {
-  const { data: cabins, count } = await getCabins();
+  const { data: cabins, count } = await getAllCabins();
   if (!count) return null;
 
   return (

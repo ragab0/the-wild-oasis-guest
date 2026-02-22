@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import sBase from "@/lib/supabase";
 import { Cabin } from "@/types/cabins";
 
-export async function getCabin(id: number): Promise<{ data: Cabin }> {
+export async function getCabin(id: number): Promise<Cabin> {
   const { data, error } = await sBase
     .from("cabins")
     .select("*")
@@ -11,13 +11,13 @@ export async function getCabin(id: number): Promise<{ data: Cabin }> {
 
   if (error) {
     console.error(error);
-    notFound();
+    return notFound();
   }
 
   return data;
 }
 
-export const getCabins = async function (): Promise<{
+export const getAllCabins = async function (): Promise<{
   data: Cabin[];
   count: number;
 }> {
